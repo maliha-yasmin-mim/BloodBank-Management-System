@@ -3,7 +3,7 @@ include "db.php";
 session_start();
 
 if (isset($_POST['register'])) {
-    // Input নিরাপদ করা
+   
     $fullname    = mysqli_real_escape_string($conn, $_POST['name']);
     $username    = mysqli_real_escape_string($conn, $_POST['username']);
     $email       = mysqli_real_escape_string($conn, $_POST['email']);
@@ -11,7 +11,7 @@ if (isset($_POST['register'])) {
     $blood_group = mysqli_real_escape_string($conn, $_POST['blood_group']);
     $locations   = implode(",", $_POST['locations']);
 
-    // Username বা Email আগে আছে কিনা চেক
+    
     $check_query = "SELECT id FROM login_Users WHERE username = ? OR email = ?";
     $stmt = mysqli_prepare($conn, $check_query);
     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
@@ -295,7 +295,7 @@ if (isset($_POST['register'])) {
                     <li><a href="compatibility.php">Compatibility</a></li>
                 </ul>
             </li>
-            <li><a href="index.php#contact">Contact</a></li>
+            <li><a href="index.php #contact">Contact</a></li>
             <li><a href="emergency.php" class="emergency-btn">Emergency</a></li>
         </ul>
     </nav>

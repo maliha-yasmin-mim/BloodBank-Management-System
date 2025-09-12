@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const backBtn = document.getElementById('backBtn');
             const moreBtn = document.getElementById('moreBtn');
             
-            // Track conversation history
+            
             let conversationHistory = [];
             let suggestionHistory = ['main'];
             let suggestionsEnabled = true;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
                 
             
-            // Comprehensive knowledge base for the AI
+           
             const knowledgeBase = {
 
                 
@@ -620,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Can I donate if I have tattoos?",
                         "Can I donate if I'm taking medication?",
                         // "Can I donate if I've recently traveled?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 process: {
@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Does donating blood hurt?",
                         "What should I do before donating?",
                         "What should I do after donating?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 health: {
@@ -642,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "How often can I donate blood?",
                         "Will donating blood weaken my immune system?",
                         "Can I get AIDS from donating blood?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 types: {
@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "What is a universal donor?",
                         "What is a universal recipient?",
                         "Why is O-negative blood special?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 website: {
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "How do I schedule an appointment?",
                         "what can you do?",
                         "How do I reset my password?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 emergency: {
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "What is your emergency hotline?",
                         "What information do I need to provide?",
                         "Do you deliver to hospitals?",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 resources: {
@@ -685,7 +685,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Educational materials",
                         "Research about blood donation",
                         "Statistics about blood needs",
-                        // "Back to main topics"
+                         
                     ]
                 },
                 support: {
@@ -695,7 +695,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Report a problem",
                         "Provide feedback",
                         "Technical issues",
-                        // "Back to main topics"
+                         
                     ]
                 }
             };
@@ -862,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const botResponse = generateResponse(message);
                         
                         if (botResponse === knowledgeBase["default"] ) {
-                            // For unknown questions, offer email template
+                           
                             addMessage(botResponse, false);
                             
                         } else {
@@ -935,22 +935,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 backBtn.disabled = false;
                 updateSuggestedQuestions(nextCategory);
             });
-            // Quick action buttons - UPDATED
-            // document.getElementById('availableDonorBtn').addEventListener('click', function() {
-            //     window.location.href = "/available_donor.html";
-            // });
             
-            // document.getElementById('eligibilityBtn').addEventListener('click', function() {
-            //     userInput.value = "What are the eligibility requirements for blood donation?";
-            //     handleUserMessage();
-            // });
-           
-            
-           
-            // Initialize suggested questions
             updateSuggestedQuestions();
             
-            // Focus input field on load
+          
             userInput.focus();
             
         });

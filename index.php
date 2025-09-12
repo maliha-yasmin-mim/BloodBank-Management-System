@@ -307,7 +307,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#why-donate">Why Donate</a></li>
                     <li><a href="find_donors.php">Find Donors</a></li>
-                    <li><a href="AI.html">Eligibility</a></li>
+                    <li><a href="AI.html">AI Assistant</a></li>
                     <li><a href="#procedure">Process</a></li>
                 </ul>
             </div>

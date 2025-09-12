@@ -2,8 +2,8 @@
         <?php
 // Database connection
 $servername = "localhost";
-$username = "root";   // change if needed
-$password = "";       // change if you set a password
+$username = "root";   
+$password = "";      
 $dbname = "bloodbank";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
