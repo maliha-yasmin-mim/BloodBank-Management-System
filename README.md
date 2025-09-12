@@ -1,6 +1,6 @@
 # LifeShare Blood Bank Management System
 
-![LifeShare Logo](images/logo.png) <!-- Use Image 3 as logo if possible -->
+![LifeShare Logo](D:\Github\BloodBank-Management-System\Project-Demo\14)Donate_Now_Database.jpeg) <!-- Use Image 3 as logo if possible -->
 
 ---
 
