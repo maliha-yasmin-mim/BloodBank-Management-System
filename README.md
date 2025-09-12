@@ -51,7 +51,7 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 ## 🗂️ Project Structure
 
 ```
-├── index.html / styles.css          # Home, service, why donate, process, contact
+├── index.php / styles.css           # Home, service, why donate, process, contact
 ├── AI.html / AI.js / AI.css         # AI Assistant chat interface
 ├── donate_now.html / .css / .js     # Immediate donation form & logic
 ├── donate_later.html / .css / .js   # Donate later registry
@@ -64,6 +64,7 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 ├── campaigns.php                    # Upcoming donation campaigns
 ├── emergency.php                    # Emergency request page & hotline
 ├── contact.php                      # Contact & feedback form
+├── login.php / login.css            # Basic login/register UI
 ├── submit_*.php                     # Form handlers for DB insert
 ├── images/                          # Project images (favicon, logo, backgrounds)
 └── README.md                        # Project documentation
