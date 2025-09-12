@@ -1,42 +1,56 @@
 # LifeShare Blood Bank Management System
-
-![LifeShare Logo](D:\Github\BloodBank-Management-System\Project-Demo\14)Donate_Now_Database.jpeg) <!-- Use Image 3 as logo if possible -->
-
----
-
-![Blood Drop](images/blood-drop-readme.jpg) <!-- Use Image 1 as featured image -->
-
-> **Your Drop. Their Hope. Our Future.**
-
----
+**Your Drop. Their Hope. Our Future.**
 
 ## 🩸 About LifeShare
 
 LifeShare is a complete Blood Bank Management System designed for Dhaka, Bangladesh. It connects donors, recipients, blood banks, and the public to make blood donation safer, easier, and more effective. Whether you want to donate, request blood urgently, or learn more about the process, LifeShare gives you all the tools and information you need.
+
+
+---
+## 📸 Project Demo
+**Homepage :**
+![Homepage](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/1_Home-Top.png?raw=true)
+**Find Donors :**
+![Find Donors](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/6_Find_donors.png?raw=true)
+**AI Assistant :**
+![AI Assistant](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/8_LifeShare_AI_Assistant.png?raw=true)
+**Donation Centres :**
+![Donation Centres](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/10_Donation_Centres.png?raw=true)
+**Donate Now :**
+![Donate Now](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/12_Donate_now.png?raw=true)
+**Donate Later :**
+![Donate Later](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/15_Donate_Later.png?raw=true)
+**Request Blood :**
+![Request Blood](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/18_Request_Blood.png?raw=true)
+**Available Donors :**
+![Available Donors](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/21_Available_Donors.png?raw=true)
+**Compatibility :**
+![Compatibility](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/22_Compatibility.png?raw=true)
+**Register :**
+![Register](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/24_Register.png?raw=true)
+**Contact Us :**
+![Contact Us](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/4_Home-Contact_Us.png?raw=true)
+**Emergency :**
+![Emergency](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/25_Emergency.png?raw=true)
+
+
+
 
 ---
 
 ## 🚀 Features
 
 - **Donor Registry:** Register as a donor (Donate Now / Donate Later).
-- **Find Donors:** Search by blood group and location.
-- **Request Blood:** Submit urgent blood requests with detailed info.
-- **Blood Compatibility Checker:** See who can donate to whom.
 - **Donation Centers:** Locate verified donation centers in Dhaka.
+- **Request Blood:** Submit urgent blood requests with detailed info.
+- **Find Donors:** Search by blood group and location.
+- **Blood Compatibility Checker:** See who can donate to whom.
 - **Upcoming Campaigns:** View and join blood drives.
-- **Emergency Hotline:** Immediate help for critical cases.
+- **User Profile:** User can create account.
 - **AI Assistant:** Chatbot answers about donation, eligibility, technical help.
 - **Contact & Feedback:** Get support and send suggestions.
+- **Emergency Hotline:** Immediate help for critical cases.
 
----
-
-## 📸 Screenshots
-
-![Blood Drop](images/blood-drop-readme.jpg) <!-- Image 1 -->
-![Donating Blood](images/donate-action.jpg) <!-- Image 2 -->
-![LifeShare Logo](images/logo.png) <!-- Image 3 -->
-
----
 
 ## 🛠️ Tech Stack
 
@@ -86,7 +100,7 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 4. Update credentials in `db.php` if needed.
 
 **Database Structure:**
-- Tables: `donate_now`, `donate_later`, `blood_requests_list`, `campaigns`, `contact_messages`
+- Tables: `donate_now`, `donate_later`, `blood_requests_list`, `campaigns`, `contact_messages`, `login_Users`
 - See PHP files for exact column names or use PHPMyAdmin's import feature.
 # Blood Bank Database Tables
 
@@ -98,6 +112,7 @@ This SQL script creates the main tables for the **bloodbank** database.
 - `blood_requests_list` → Blood requests tracking  
 - `campaigns` → Blood donation campaigns/events  
 - `contact_messages` → Messages sent through contact form  
+- `login_Users` → Store user's information  
 
 ## SQL Script
 
@@ -122,8 +137,11 @@ CREATE TABLE donate_now (
     district VARCHAR(50),
     area VARCHAR(50),
     hospital VARCHAR(100),
-    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+status ENUM('pending', 'processing', 'fulfilled') DEFAULT 'pending'
+
 );
+
 
 -- Table 2: donate_later (scheduled donations)
 CREATE TABLE  donate_later (
@@ -137,8 +155,11 @@ CREATE TABLE  donate_later (
     previous_donation ENUM('yes', 'no') NOT NULL,
     last_donation DATE,
     address TEXT NOT NULL,
-    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pending', 'processing', 'fulfilled') DEFAULT 'pending'
+
 );
+
 
 -- Table 3: blood_requests_list (all blood requests)
 CREATE TABLE blood_requests_list (
@@ -154,7 +175,9 @@ CREATE TABLE blood_requests_list (
     terms TINYINT(1) NOT NULL,
     request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status ENUM('pending', 'processing', 'fulfilled') DEFAULT 'pending'
+
 );
+
 
 -- Table 4: campaigns (blood donation campaigns/events)
 CREATE TABLE campaigns (
@@ -176,6 +199,17 @@ CREATE TABLE contact_messages (
     phone_number VARCHAR(20),
     subject VARCHAR(150),
     message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Table 6: login_Users
+CREATE TABLE login_Users (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    blood_group VARCHAR(5) NOT NULL,
+    locations VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
