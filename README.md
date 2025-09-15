@@ -8,6 +8,8 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 
 ---
 ## 📸 Project Demo
+**Video of Project :** -  https://youtu.be/TSJKErwZ-II?si=M0Co_E7xW6RdTZSu 
+
 **Homepage :**
 ![Homepage](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/1_Home-Top.png?raw=true)
 **Find Donors :**
@@ -32,7 +34,6 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 ![Contact Us](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/4_Home-Contact_Us.png?raw=true)
 **Emergency :**
 ![Emergency](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/25_Emergency.png?raw=true)
-
 
 
 
@@ -98,6 +99,7 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 2. Import the `bloodbank` database (see below).
 3. Place files in your web server root (htdocs for XAMPP).
 4. Update credentials in `db.php` if needed.
+5. After run Localhost and MySQL Server. Enter the link : http://localhost/blood-bank-management-system/index.php
 
 **Database Structure:**
 - Tables: `donate_now`, `donate_later`, `blood_requests_list`, `campaigns`, `contact_messages`, `login_Users`
