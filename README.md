@@ -8,7 +8,7 @@ LifeShare is a complete Blood Bank Management System designed for Dhaka, Banglad
 
 ---
 ## 📸 Project Demo
-**Video of Project :** -  https://youtu.be/TSJKErwZ-II?si=M0Co_E7xW6RdTZSu 
+**Video of Project :** -  https://youtu.be/yjU_f-wFpTI?si=Y6NpZRJuOKjIFvFW 
 
 **Homepage :**
 ![Homepage](https://github.com/maliha-yasmin-mim/BloodBank-Management-System/blob/main/Project-Demo/1_Home-Top.png?raw=true)
